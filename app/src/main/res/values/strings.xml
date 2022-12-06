@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Word Game</string>
+    <string name="title">The Word Game</string>
+    <string name="subheading">Guess The Word</string>
 </resources>
