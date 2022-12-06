@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/app_wall"
+    android:padding="8dp"
     tools:context=".MainActivity">
 
     <TextView
@@ -10,33 +12,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="@string/title"
         android:fontFamily="@font/abril_fatface"
-        android:textColor="@android:color/black"
+        android:text="@string/title"
+        android:textColor="#ddf803"
         android:textSize="36sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/abril_fatface"
         android:layout_below="@id/title_text"
         android:layout_centerHorizontal="true"
+        android:fontFamily="@font/abril_fatface"
         android:text="@string/subheading"
-        android:textColor="@android:color/black"
+        android:textColor="#ecfd64"
         android:textSize="22sp" />
 
     <Button
         android:id="@+id/play_button"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Play"
-        android:layout_height="wrap_content" />
+        android:text="@string/play" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_centerInParent="true"
+        android:id="@+id/exit_button"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/play_button"
-        android:text="Exit"
-        android:layout_height="wrap_content" />
+        android:layout_centerInParent="true"
+        android:text="@string/exit" />
 
 </RelativeLayout>
