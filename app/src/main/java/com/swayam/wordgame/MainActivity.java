@@ -15,12 +15,14 @@ public class MainActivity extends AppCompatActivity {
 
         Button playButton = findViewById(R.id.play_button);
         playButton.setOnClickListener(v -> {
+            playButton.setElevation(0f);
             Intent intent = new Intent(getApplicationContext(), GameActivity.class);
             startActivity(intent);
         });
 
         Button exitButton = findViewById(R.id.exit_button);
         exitButton.setOnClickListener(v -> {
+            exitButton.setElevation(0f);
             finish();
         });
     }
