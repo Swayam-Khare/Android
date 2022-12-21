@@ -9,4 +9,8 @@
     <color name="colorOnSecondary">#ffffff</color>
     <!-- Status bar color. -->
     <color name="statusBarColor">#00325a</color>
+
+    <color name="correct">#32a852</color>
+    <color name="incorrect">#db2525</color>
+    <color name="half_correct">#cfcb17</color>
 </resources>
