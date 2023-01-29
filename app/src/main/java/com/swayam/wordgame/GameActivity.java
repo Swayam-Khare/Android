@@ -3,6 +3,7 @@ package com.swayam.wordgame;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -87,7 +88,14 @@ public class GameActivity extends AppCompatActivity {
             }
         }
 
+        if (numOfGuesses < 1){
+            gameOver();
+        }
+    }
 
+    private void gameOver() {
+        Intent intent = new Intent(this, OverActivity.class);
+        startActivity(intent);
     }
 
     private boolean contains(String finalWord, char user) {
