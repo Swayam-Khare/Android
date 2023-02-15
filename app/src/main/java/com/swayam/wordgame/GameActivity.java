@@ -96,6 +96,7 @@ public class GameActivity extends AppCompatActivity {
     private void gameOver() {
         Intent intent = new Intent(this, OverActivity.class);
         startActivity(intent);
+        finish();
     }
 
     private boolean contains(String finalWord, char user) {
