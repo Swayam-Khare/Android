@@ -35,6 +35,17 @@
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/word_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Number of guesses left: 6"
+        android:textAlignment="center"
+        android:textColor="@color/colorOnPrimary"
+        android:textSize="18sp" />
+
     <EditText
         android:id="@+id/input_field"
         android:layout_width="wrap_content"
@@ -43,7 +54,8 @@
         android:autofillHints="Enter Your Guess"
         android:background="@color/statusBarColor"
         android:hint="@string/enter_your_guess"
-        android:inputType="textCapCharacters"
+        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        android:inputType="textFilter |textCapCharacters"
         android:maxLength="5"
         android:paddingHorizontal="16dp"
         android:paddingVertical="8dp"

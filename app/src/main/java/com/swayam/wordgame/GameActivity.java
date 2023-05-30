@@ -3,7 +3,6 @@ package com.swayam.wordgame;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -67,7 +66,7 @@ public class GameActivity extends AppCompatActivity {
         Log.i("GameActivity.class", "Answer: " + finalWord);
         inputField.setText("");
 
-        for (TextView wordView : wordLayout){
+        for (TextView wordView : wordLayout) {
             wordView.setText("");
             wordView.setBackgroundColor(ContextCompat.getColor(this, R.color.statusBarColor));
         }
@@ -75,7 +74,7 @@ public class GameActivity extends AppCompatActivity {
 
     private void checkGuess(String userGuess) {
 
-        if (userGuess.length() != 5){
+        if (userGuess.length() != 5) {
             Toast.makeText(this, "Enter a 5 letter guess", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -91,18 +90,26 @@ public class GameActivity extends AppCompatActivity {
 
             if (user == answer) {
                 correctWords.add(user);
+            }
+        }
+
+        for (int i = 0; i < userGuess.length(); i++) {
+            user = userGuess.charAt(i);
+            answer = finalWord.charAt(i);
+
+            if (user == answer) {
                 wordLayout[i].setBackgroundColor(ContextCompat.getColor(this, R.color.correct));
             }
             else if (!correctWords.contains(user) && contains(finalWord, user)) {
                 wordLayout[i].setBackgroundColor(ContextCompat.getColor(this, R.color.half_correct));
-            }
-            else {
+            } else {
                 wordLayout[i].setBackgroundColor(ContextCompat.getColor(this, R.color.incorrect));
             }
         }
 
-        if (correctWords.size() == 5){
+        if (correctWords.size() == 5) {
             showAlertDialog("Correct!", "You guessed the word: ", "New Word");
+            return;
         }
 
         if (numOfGuesses < 1) {
