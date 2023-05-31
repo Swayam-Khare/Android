@@ -8,7 +8,7 @@
     <color name="colorSecondaryVariant">#d7e3f8</color>
     <color name="colorOnSecondary">#ffffff</color>
     <!-- Status bar color. -->
-    <color name="statusBarColor">#00325a</color>
+    <color name="statusBarColor">#292929</color>
 
     <color name="correct">#32a852</color>
     <color name="incorrect">#db2525</color>

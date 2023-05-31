@@ -3,6 +3,7 @@ package com.swayam.wordgame;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -17,12 +18,15 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+@SuppressLint("SetTextI18n")
 public class GameActivity extends AppCompatActivity {
 
+    private static final String LOG_TAG = "GameActivity.java";
     String finalWord;
     List<String> word_list;
     EditText inputField;
     TextView[] wordLayout;
+    TextView guessesLeft;
     List<Character> correctWords;
     int numOfGuesses;
 
@@ -39,6 +43,7 @@ public class GameActivity extends AppCompatActivity {
         wordLayout[2] = findViewById(R.id.third_letter);
         wordLayout[3] = findViewById(R.id.fourth_letter);
         wordLayout[4] = findViewById(R.id.fifth_letter);
+        guessesLeft = findViewById(R.id.guessesLeftText);
 
         inputField = findViewById(R.id.input_field);
 
@@ -63,7 +68,7 @@ public class GameActivity extends AppCompatActivity {
     private void startGame() {
         numOfGuesses = 6;
         finalWord = word_list.get(new Random().nextInt(word_list.size())).toUpperCase();
-        Log.i("GameActivity.class", "Answer: " + finalWord);
+        Log.i(LOG_TAG, "Answer: " + finalWord);
         inputField.setText("");
 
         for (TextView wordView : wordLayout) {
@@ -81,7 +86,9 @@ public class GameActivity extends AppCompatActivity {
 
         char user;
         char answer;
+
         numOfGuesses--;
+        guessesLeft.setText("Number of guesses left: " + numOfGuesses);
 
         for (int i = 0; i < userGuess.length(); i++) {
             user = userGuess.charAt(i);
