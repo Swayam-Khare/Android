@@ -3,5 +3,6 @@
     <gradient
         android:startColor="@color/statusBarColor"
         android:endColor="@android:color/black"
+        android:centerColor="#202020"
         android:angle="270" />
 </shape>

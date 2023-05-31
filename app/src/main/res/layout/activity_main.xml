@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/app_wall"
+    android:background="@drawable/background"
     android:padding="8dp"
     tools:context=".MainActivity">
 
@@ -55,12 +55,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/exit_button"
+        android:id="@+id/help_button"
         style="@style/button"
         android:layout_below="@id/play_button"
         android:layout_centerInParent="true"
         android:layout_marginTop="8dp"
-        android:text="@string/exit"
+        android:text="@string/help"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/play_button" />

@@ -20,10 +20,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        Button exitButton = findViewById(R.id.exit_button);
-        exitButton.setOnClickListener(v -> {
-            exitButton.setElevation(0f);
-            finish();
+        Button helpButton = findViewById(R.id.help_button);
+        helpButton.setOnClickListener(v -> {
+            helpButton.setElevation(0f);
+            Intent intent = new Intent(getApplicationContext(), HelpActivity.class);
+            startActivity(intent);
         });
     }
 }
