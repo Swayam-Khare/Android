@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,45 +8,190 @@
     tools:context=".GameActivity">
 
     <LinearLayout
-        android:id="@+id/word_layout"
+        android:id="@+id/word_layout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/first_letter"
+            android:id="@+id/first_letter1"
             style="@style/word_layout" />
 
         <TextView
-            android:id="@+id/second_letter"
+            android:id="@+id/second_letter1"
             style="@style/word_layout" />
 
         <TextView
-            android:id="@+id/third_letter"
+            android:id="@+id/third_letter1"
             style="@style/word_layout" />
 
         <TextView
-            android:id="@+id/fourth_letter"
+            android:id="@+id/fourth_letter1"
             style="@style/word_layout" />
 
         <TextView
-            android:id="@+id/fifth_letter"
+            android:id="@+id/fifth_letter1"
             style="@style/word_layout" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/guessesLeftText"
+    <LinearLayout
+        android:id="@+id/word_layout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/word_layout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:text="Number of guesses left: 6"
-        android:textAlignment="center"
-        android:textColor="@color/colorOnPrimary"
-        android:textSize="18sp" />
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/word_layout1">
+
+        <TextView
+            android:id="@+id/first_letter2"
+            style="@style/word_layout" />
+
+        <TextView
+            android:id="@+id/second_letter2"
+            style="@style/word_layout" />
+
+        <TextView
+            android:id="@+id/third_letter2"
+            style="@style/word_layout" />
+
+        <TextView
+            android:id="@+id/fourth_letter2"
+            style="@style/word_layout" />
+
+        <TextView
+            android:id="@+id/fifth_letter2"
+            style="@style/word_layout" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/word_layout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/word_layout2">
+
+        <TextView
+            android:id="@+id/first_letter3"
+            style="@style/word_layout" />
+
+        <TextView
+            android:id="@+id/second_letter3"
+            style="@style/word_layout" />
+
+        <TextView
+            android:id="@+id/third_letter3"
+            style="@style/word_layout" />
+
+        <TextView
+            android:id="@+id/fourth_letter3"
+            style="@style/word_layout" />
+
+        <TextView
+            android:id="@+id/fifth_letter3"
+            style="@style/word_layout" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/word_layout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/word_layout3">
+
+        <TextView
+            android:id="@+id/first_letter4"
+            style="@style/word_layout" />
+
+        <TextView
+            android:id="@+id/second_letter4"
+            style="@style/word_layout" />
+
+        <TextView
+            android:id="@+id/third_letter4"
+            style="@style/word_layout" />
+
+        <TextView
+            android:id="@+id/fourth_letter4"
+            style="@style/word_layout" />
+
+        <TextView
+            android:id="@+id/fifth_letter4"
+            style="@style/word_layout" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/word_layout5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/word_layout4">
+
+        <TextView
+            android:id="@+id/first_letter5"
+            style="@style/word_layout" />
+
+        <TextView
+            android:id="@+id/second_letter5"
+            style="@style/word_layout" />
+
+        <TextView
+            android:id="@+id/third_letter5"
+            style="@style/word_layout" />
+
+        <TextView
+            android:id="@+id/fourth_letter5"
+            style="@style/word_layout" />
+
+        <TextView
+            android:id="@+id/fifth_letter5"
+            style="@style/word_layout" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/word_layout6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/word_layout5">
+
+        <TextView
+            android:id="@+id/first_letter6"
+            style="@style/word_layout" />
+
+        <TextView
+            android:id="@+id/second_letter6"
+            style="@style/word_layout" />
+
+        <TextView
+            android:id="@+id/third_letter6"
+            style="@style/word_layout" />
+
+        <TextView
+            android:id="@+id/fourth_letter6"
+            style="@style/word_layout" />
+
+        <TextView
+            android:id="@+id/fifth_letter6"
+            style="@style/word_layout" />
+
+    </LinearLayout>
 
     <EditText
         android:id="@+id/input_field"
@@ -54,8 +200,8 @@
         android:layout_centerInParent="true"
         android:autofillHints="Enter Your Guess"
         android:background="@color/statusBarColor"
-        android:hint="@string/enter_your_guess"
         android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        android:hint="@string/enter_your_guess"
         android:inputType="textFilter |textCapCharacters"
         android:maxLength="5"
         android:paddingHorizontal="16dp"
@@ -63,6 +209,12 @@
         android:textAlignment="center"
         android:textColor="@color/colorOnPrimary"
         android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/word_layout6"
+        app:layout_constraintVertical_bias="0.096"
         tools:text="Hello" />
 
     <Button
@@ -71,8 +223,11 @@
         android:layout_width="wrap_content"
         android:layout_below="@id/input_field"
         android:layout_centerInParent="true"
-        android:layout_marginTop="16dp"
         android:text="@string/submit"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_field" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

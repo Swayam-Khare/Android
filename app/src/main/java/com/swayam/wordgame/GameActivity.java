@@ -2,6 +2,7 @@ package com.swayam.wordgame;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -26,7 +27,6 @@ public class GameActivity extends AppCompatActivity {
     List<String> word_list;
     EditText inputField;
     TextView[] wordLayout;
-    TextView guessesLeft;
     List<Character> correctWords;
     int numOfGuesses;
 
@@ -38,12 +38,11 @@ public class GameActivity extends AppCompatActivity {
         correctWords = new ArrayList<>(5);
         wordLayout = new TextView[5];
 
-        wordLayout[0] = findViewById(R.id.first_letter);
-        wordLayout[1] = findViewById(R.id.second_letter);
-        wordLayout[2] = findViewById(R.id.third_letter);
-        wordLayout[3] = findViewById(R.id.fourth_letter);
-        wordLayout[4] = findViewById(R.id.fifth_letter);
-        guessesLeft = findViewById(R.id.guessesLeftText);
+        wordLayout[0] = findViewById(R.id.first_letter1);
+        wordLayout[1] = findViewById(R.id.second_letter1);
+        wordLayout[2] = findViewById(R.id.third_letter1);
+        wordLayout[3] = findViewById(R.id.fourth_letter1);
+        wordLayout[4] = findViewById(R.id.fifth_letter1);
 
         inputField = findViewById(R.id.input_field);
 
@@ -73,7 +72,7 @@ public class GameActivity extends AppCompatActivity {
 
         for (TextView wordView : wordLayout) {
             wordView.setText("");
-            wordView.setBackgroundColor(ContextCompat.getColor(this, R.color.statusBarColor));
+            wordView.setBackground(ResourcesCompat.getDrawable(getResources(),R.drawable.normal_txt_bg, getTheme()));
         }
     }
 
@@ -88,7 +87,6 @@ public class GameActivity extends AppCompatActivity {
         char answer;
 
         numOfGuesses--;
-        guessesLeft.setText("Number of guesses left: " + numOfGuesses);
 
         for (int i = 0; i < userGuess.length(); i++) {
             user = userGuess.charAt(i);
@@ -105,12 +103,12 @@ public class GameActivity extends AppCompatActivity {
             answer = finalWord.charAt(i);
 
             if (user == answer) {
-                wordLayout[i].setBackgroundColor(ContextCompat.getColor(this, R.color.correct));
+                wordLayout[i].setBackground(ResourcesCompat.getDrawable(getResources(),R.drawable.correct_txt_bg, getTheme()));
             }
             else if (!correctWords.contains(user) && contains(finalWord, user)) {
-                wordLayout[i].setBackgroundColor(ContextCompat.getColor(this, R.color.half_correct));
+                wordLayout[i].setBackground(ResourcesCompat.getDrawable(getResources(),R.drawable.halfcorrect_txt_bg, getTheme()));
             } else {
-                wordLayout[i].setBackgroundColor(ContextCompat.getColor(this, R.color.incorrect));
+                wordLayout[i].setBackground(ResourcesCompat.getDrawable(getResources(),R.drawable.incorrect_txt_bg, getTheme()));
             }
         }
 
