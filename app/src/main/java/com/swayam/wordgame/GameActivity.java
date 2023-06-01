@@ -26,7 +26,7 @@ public class GameActivity extends AppCompatActivity {
     String finalWord;
     List<String> word_list;
     EditText inputField;
-    TextView[] wordLayout;
+    TextView[] wordLayout, allWordLayout;
     List<Character> correctWords;
     int numOfGuesses;
 
@@ -37,12 +37,38 @@ public class GameActivity extends AppCompatActivity {
 
         correctWords = new ArrayList<>(5);
         wordLayout = new TextView[5];
+        allWordLayout = new TextView[30];
 
-        wordLayout[0] = findViewById(R.id.first_letter1);
-        wordLayout[1] = findViewById(R.id.second_letter1);
-        wordLayout[2] = findViewById(R.id.third_letter1);
-        wordLayout[3] = findViewById(R.id.fourth_letter1);
-        wordLayout[4] = findViewById(R.id.fifth_letter1);
+        allWordLayout[0] = findViewById(R.id.first_letter1);
+        allWordLayout[1] = findViewById(R.id.second_letter1);
+        allWordLayout[2] = findViewById(R.id.third_letter1);
+        allWordLayout[3] = findViewById(R.id.fourth_letter1);
+        allWordLayout[4] = findViewById(R.id.fifth_letter1);
+        allWordLayout[5] = findViewById(R.id.first_letter2);
+        allWordLayout[6] = findViewById(R.id.second_letter2);
+        allWordLayout[7] = findViewById(R.id.third_letter2);
+        allWordLayout[8] = findViewById(R.id.fourth_letter2);
+        allWordLayout[9] = findViewById(R.id.fifth_letter2);
+        allWordLayout[10] = findViewById(R.id.first_letter3);
+        allWordLayout[11] = findViewById(R.id.second_letter3);
+        allWordLayout[12] = findViewById(R.id.third_letter3);
+        allWordLayout[13] = findViewById(R.id.fourth_letter3);
+        allWordLayout[14] = findViewById(R.id.fifth_letter3);
+        allWordLayout[15] = findViewById(R.id.first_letter4);
+        allWordLayout[16] = findViewById(R.id.second_letter4);
+        allWordLayout[17] = findViewById(R.id.third_letter4);
+        allWordLayout[18] = findViewById(R.id.fourth_letter4);
+        allWordLayout[19] = findViewById(R.id.fifth_letter4);
+        allWordLayout[20] = findViewById(R.id.first_letter5);
+        allWordLayout[21] = findViewById(R.id.second_letter5);
+        allWordLayout[22] = findViewById(R.id.third_letter5);
+        allWordLayout[23] = findViewById(R.id.fourth_letter5);
+        allWordLayout[24] = findViewById(R.id.fifth_letter5);
+        allWordLayout[25] = findViewById(R.id.first_letter6);
+        allWordLayout[26] = findViewById(R.id.second_letter6);
+        allWordLayout[27] = findViewById(R.id.third_letter6);
+        allWordLayout[28] = findViewById(R.id.fourth_letter6);
+        allWordLayout[29] = findViewById(R.id.fifth_letter6);
 
         inputField = findViewById(R.id.input_field);
 
@@ -59,6 +85,7 @@ public class GameActivity extends AppCompatActivity {
             inputField.setText("");
             correctWords.clear();
             checkGuess(userGuess);
+            highlightNextSlots();
         });
 
         startGame();
@@ -70,9 +97,54 @@ public class GameActivity extends AppCompatActivity {
         Log.i(LOG_TAG, "Answer: " + finalWord);
         inputField.setText("");
 
-        for (TextView wordView : wordLayout) {
+        wordLayout[0] = allWordLayout[0];
+        wordLayout[1] = allWordLayout[1];
+        wordLayout[2] = allWordLayout[2];
+        wordLayout[3] = allWordLayout[3];
+        wordLayout[4] = allWordLayout[4];
+
+        for (TextView wordView : allWordLayout) {
             wordView.setText("");
             wordView.setBackground(ResourcesCompat.getDrawable(getResources(),R.drawable.normal_txt_bg, getTheme()));
+        }
+    }
+
+    private void highlightNextSlots() {
+        switch (numOfGuesses) {
+            case 5:
+                wordLayout[0] = findViewById(R.id.first_letter2);
+                wordLayout[1] = findViewById(R.id.second_letter2);
+                wordLayout[2] = findViewById(R.id.third_letter2);
+                wordLayout[3] = findViewById(R.id.fourth_letter2);
+                wordLayout[4] = findViewById(R.id.fifth_letter2);
+                break;
+            case 4:
+                wordLayout[0] = findViewById(R.id.first_letter3);
+                wordLayout[1] = findViewById(R.id.second_letter3);
+                wordLayout[2] = findViewById(R.id.third_letter3);
+                wordLayout[3] = findViewById(R.id.fourth_letter3);
+                wordLayout[4] = findViewById(R.id.fifth_letter3);
+                break;
+            case 3:
+                wordLayout[0] = findViewById(R.id.first_letter4);
+                wordLayout[1] = findViewById(R.id.second_letter4);
+                wordLayout[2] = findViewById(R.id.third_letter4);
+                wordLayout[3] = findViewById(R.id.fourth_letter4);
+                wordLayout[4] = findViewById(R.id.fifth_letter4);
+                break;
+            case 2:
+                wordLayout[0] = findViewById(R.id.first_letter5);
+                wordLayout[1] = findViewById(R.id.second_letter5);
+                wordLayout[2] = findViewById(R.id.third_letter5);
+                wordLayout[3] = findViewById(R.id.fourth_letter5);
+                wordLayout[4] = findViewById(R.id.fifth_letter5);
+                break;
+            default:
+                wordLayout[0] = findViewById(R.id.first_letter6);
+                wordLayout[1] = findViewById(R.id.second_letter6);
+                wordLayout[2] = findViewById(R.id.third_letter6);
+                wordLayout[3] = findViewById(R.id.fourth_letter6);
+                wordLayout[4] = findViewById(R.id.fifth_letter6);
         }
     }
 
