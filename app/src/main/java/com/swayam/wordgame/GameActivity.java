@@ -1,7 +1,6 @@
 package com.swayam.wordgame;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 
 import android.annotation.SuppressLint;
@@ -179,7 +178,8 @@ public class GameActivity extends AppCompatActivity {
             }
             else if (!correctWords.contains(user) && contains(finalWord, user)) {
                 wordLayout[i].setBackground(ResourcesCompat.getDrawable(getResources(),R.drawable.halfcorrect_txt_bg, getTheme()));
-            } else {
+            }
+            else {
                 wordLayout[i].setBackground(ResourcesCompat.getDrawable(getResources(),R.drawable.incorrect_txt_bg, getTheme()));
             }
         }
